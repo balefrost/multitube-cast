@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Casting!</title>
+    <!--    <style rel="index.css"></style>-->
+</head>
+<body>
+<div id="videos-container"></div>
+<script type="application/javascript">
+    function __onGCastApiAvailable(isAvailable) {
+        if (isAvailable) {
+            console.log("initializing cast!");
+            cast.framework.CastContext.getInstance().setOptions({
+                receiverApplicationId: "28CA7B99",
+                autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+            });
+        }
+    }
+</script>
+<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+<google-cast-launcher></google-cast-launcher>
+</body>
+</html>
